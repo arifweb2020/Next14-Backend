@@ -1,0 +1,3 @@
+1> npm install mongodb @types/mongodb typescript
+if error then install npm install @types/mongoose --save-dev
+2> https://mongoosejs.com/
