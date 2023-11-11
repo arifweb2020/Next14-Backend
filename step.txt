@@ -1,3 +1,4 @@
 1> npm install mongodb @types/mongodb typescript
 if error then install npm install @types/mongoose --save-dev
+and add "types": ["mongoose"], in tsconfig.json file
 2> https://mongoosejs.com/
