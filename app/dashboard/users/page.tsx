@@ -7,13 +7,14 @@ import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const UsersPage = async() => {
-  const users = await fetchUsers();
-  console.log(users, "user")
-  // const q = searchParams?.q || "";
-  // const page = searchParams?.page || 1;
-  // const { count, users } = await fetchUsers(q, page);
- const count = 2;
+const UsersPage = async({searchParams}:any) => {
+  // const q:any = searchParams?.q || "";
+  // const users = await fetchUsers(q,);
+  // console.log(users, "user")
+   const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const { count, users } = await fetchUsers(q, page);
+ //const count = 2;
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -34,7 +35,7 @@ const UsersPage = async() => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users?.map((user) => (
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
